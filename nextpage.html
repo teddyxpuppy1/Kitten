@@ -3,129 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday My Love</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>A Love Story Unfolding</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Satisfy&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-image: url('birthday-background.jpg'); /* Replace with a special background */
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            color: white;
-            height: 100vh;
+            background: linear-gradient(135deg, #ff6b9e, #8a4fff);
+            color: #fff;
+            font-family: 'Merriweather', serif;
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 15px;
-            overflow-y: auto;
+            perspective: 1000px;
         }
-        .container-custom {
-            background: rgba(255, 182, 193, 0.8);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 20px rgba(255, 105, 180, 0.8);
-            animation: glow 2s infinite alternate;
-            max-width: 90%;
-            overflow-y: auto;
-            max-height: 90vh;
-        }
-        @keyframes glow {
-            from {
-                box-shadow: 0px 0px 10px rgba(255, 105, 180, 0.6);
-            }
-            to {
-                box-shadow: 0px 0px 20px rgba(255, 105, 180, 1);
-            }
-        }
-        .important-dates {
-            margin-top: 20px;
+
+        .birthday-card {
             background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: left;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transform: rotateX(10deg);
+            transition: all 0.5s ease;
         }
-        .image-container {
-            position: relative;
-            display: inline-block;
-            margin-top: 20px;
+
+        .card-header {
+            text-align: center;
+            margin-bottom: 30px;
         }
-        .image-container img {
+
+        .card-header h1 {
+            font-family: 'Satisfy', cursive;
+            font-size: 4rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        .profile-image {
             width: 250px;
             height: 250px;
-            object-fit: cover;
             border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.9);
-            transition: transform 0.3s ease-in-out;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin: 0 auto 30px;
+            display: block;
+            transform: scale(1);
+            transition: transform 0.3s ease;
         }
-        .image-container img:hover {
-            transform: scale(1.1);
+
+        .profile-image:hover {
+            transform: scale(1.05);
         }
-        .table {
-            background: rgba(255, 255, 255, 0.3);
+
+        .love-message {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .memories {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .memories h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Satisfy', cursive;
+            color: #ffffff;
+            font-size: 2.5rem;
+        }
+
+        .memory-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
             border-radius: 10px;
+            transition: all 0.3s ease;
         }
-        .scroll-container {
-            max-height: 60vh;
-            overflow-y: auto;
-            padding-right: 10px;
+
+        .memory-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+
+        .memory-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .memory-details {
+            flex-grow: 1;
+        }
+
+        .memory-details h3 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .memory-details p {
+            font-size: 0.9rem;
+            color: #f0f0f0;
+        }
+
+        .final-message {
+            text-align: center;
+            font-size: 1.4rem;
+            font-family: 'Satisfy', cursive;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 600px) {
+            .birthday-card {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .card-header h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container text-center container-custom">
-        <h1 class="display-4">🎂 Happy Birthday Kittyyyy ! 🎂</h1>
-        <p class="lead">This is the first birthday that we are celebrating together, and it means the Special Moment For me! 💖</p>
-        <p class="fw-bold">You are the most important person in my life. My happiness begins and ends with you. 💕</p>
-        <div class="image-container mx-auto">
-            <img src="amrutha.jpg" alt="Her Beautiful Smile"> <!-- Replace with the actual image file -->
+    <div class="birthday-card">
+        <div class="card-header">
+            <h1>Happy Birthday, My Love</h1>
         </div>
-        <br>
-        <button class="btn btn-danger mt-3" onclick="showMessage()">A Special Wish 🎁</button>
-        <div class="important-dates mt-4 p-3 rounded scroll-container">
-            <h2 class="h4 text-center">Our Special Moments ❤️</h2>
-            <div class="table-responsive">
-                <table class="table table-bordered text-white">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Memorable Event</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>18-10-2024</td>
-                            <td>First time we met in NIT</td>
-                        </tr>
-                        <tr>
-                            <td>25-11-2024</td>
-                            <td>First call between us</td>
-                        </tr>
-                        <tr>
-                            <td>07-02-2025</td>
-                            <td>The quality time we spent together in NIT</td>
-                        </tr>
-                        <tr>
-                            <td>07-03-2025</td>
-                            <td>The first movie we watched together</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>20-03-2025</td>
-                            <td>The time we spent in our college</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+        <img src="amrutha.jpg" alt="Our Special Moment" class="profile-image">
+
+        <div class="love-message">
+            <p>In the vast universe of possibilities, I found you. You are not just the most important person in my life, but the very reason my world shines brighter.</p>
+        </div>
+
+        <div class="memories">
+            <h2>Our Journey Together</h2>
+            <div class="memory-item">
+                <div class="memory-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="memory-details">
+                    <h3>First Meeting</h3>
+                    <p>18-10-2024 at NIT - The day my heart knew it had found its home</p>
+                </div>
+            </div>
+
+            <div class="memory-item">
+                <div class="memory-icon"><i class="fas fa-phone"></i></div>
+                <div class="memory-details">
+                    <h3>First Call</h3>
+                    <p>25-11-2024 - When our voices first connected, bridging the distance between us</p>
+                </div>
+            </div>
+
+            <div class="memory-item">
+                <div class="memory-icon"><i class="fas fa-clock"></i></div>
+                <div class="memory-details">
+                    <h3>NIT Moments</h3>
+                    <p>07-02-2025 - Precious moments that defined our connection</p>
+                </div>
+            </div>
+
+            <div class="memory-item">
+                <div class="memory-icon"><i class="fas fa-film"></i></div>
+                <div class="memory-details">
+                    <h3>First Movie Together</h3>
+                    <p>07-03-2025 - Our first cinematic adventure, side by side</p>
+                </div>
+            </div>
+
+            <div class="memory-item">
+                <div class="memory-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="memory-details">
+                    <h3>College Memories</h3>
+                    <p>20-03-2025 - Moments that will forever be etched in our story</p>
+                </div>
             </div>
         </div>
+
+        <div class="final-message">
+            <p>This is our first birthday together, and I promise to make every moment count. You are my today, my tomorrow, my always.</p>
+        </div>
     </div>
-    <script>
-        function showMessage() {
-            alert('Happy Birthday, my love! You make my world shine brighter every day. 💖🎂');
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

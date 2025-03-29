@@ -134,6 +134,69 @@
             font-family: 'Satisfy', cursive;
             color: #ffffff;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        /* Music Player Styles */
+        .music-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .music-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Satisfy', cursive;
+            color: #ffffff;
+            font-size: 2.5rem;
+        }
+
+        .music-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .song-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .song-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+
+        .song-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .song-details {
+            flex-grow: 1;
+        }
+
+        .song-details h3 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .song-details p {
+            font-size: 0.9rem;
+            color: #f0f0f0;
+        }
+
+        .audio-player {
+            width: 100%;
+            margin-top: 10px;
         }
 
         @media (max-width: 600px) {
@@ -151,10 +214,10 @@
 <body>
     <div class="birthday-card">
         <div class="card-header">
-            <h1>Happy Birthday, Kitten </h1>
+            <h1>Happy Birthday Kitten🐱✨</h1>
         </div>
 
-        <img src="amrutha.jpg" alt="Our Special Moment" class="profile-image">
+        <img src="kittuuu.jpg" alt="Our Special Moment" class="profile-image">
 
         <div class="love-message">
             <p>In the vast universe of possibilities, I found you. You are not just the most important person in my life, but the very reason my world shines brighter.</p>
@@ -206,6 +269,94 @@
         <div class="final-message">
             <p>This is our first birthday together, and I promise to make every moment count. You are my today, my tomorrow, my always.</p>
         </div>
+
+        <!-- Music Section -->
+        <div class="music-section">
+            <h2>Our Playlist</h2>
+            <div class="music-container">
+                <div class="song-item">
+                    <div class="song-icon"><i class="fas fa-music"></i></div>
+                    <div class="song-details">
+                        <h3>Pushpa</h3>
+                        <p> "A fiery rhythm that ignites the soul!"</p>
+                        <audio class="audio-player" controls>
+                            <source src="sooseki.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <div class="song-icon"><i class="fas fa-music"></i></div>
+                    <div class="song-details">
+                        <h3>Premam</h3>
+                        <p>"A soulful journey through love’s deepest echoes!"</p>
+                        <audio class="audio-player" controls>
+                            <source src="Evare.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <div class="song-icon"><i class="fas fa-music"></i></div>
+                    <div class="song-details">
+                        <h3>Geetha Govindham</h3>
+                        <p>"A melody of love, longing, and pure magic!"</p>
+                        <audio class="audio-player" controls>
+                            <source src="inkem.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <div class="song-icon"><i class="fas fa-music"></i></div>
+                    <div class="song-details">
+                        <h3>Love Your voice</h3>
+                        <p>"When words fail, your voice sings my heart’s tune!"</p>
+                        <audio class="audio-player" controls>
+                            <source src="loveyourvoice.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <div class="song-icon"><i class="fas fa-music"></i></div>
+                    <div class="song-details">
+                        <h3>Arya</h3>
+                        <p>"Love so intense, it rewrites destiny!"</p>
+                        <audio class="audio-player" controls>
+                            <source src="uppenantha.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="thank-you">
+            <h2>Thank You  kittyyy🐱✨</h2>
+            
+        </div>
     </div>
+
+    <script>
+        // Optional JavaScript to enhance the music player experience
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioPlayers = document.querySelectorAll('.audio-player');
+            
+            // Pause other songs when one starts playing
+            audioPlayers.forEach(player => {
+                player.addEventListener('play', function() {
+                    audioPlayers.forEach(otherPlayer => {
+                        if (otherPlayer !== player) {
+                            otherPlayer.pause();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
